@@ -18,7 +18,9 @@
     #import <SystemConfiguration/SystemConfiguration.h>
     #import <MobileCoreServices/MobileCoreServices.h>
 
-    #import "Constants.h"
+    #import "ARDefaults.h"
+    #import "ARAppConstants.h"
+    #import "ARViewTagConstants.h"
 
     #import <AFNetworking/AFNetworking.h>
     #import <Mantle/Mantle.h>
@@ -43,9 +45,70 @@
     #import <ORStackView/ORTagBasedAutoStackView.h>
 
     #import "ArtsyAPI.h"
-    #import "Models.h"
-    #import "Categories.h"
-    #import "StyledSubclasses.h"
+    #import "ArtsyAPI+Artworks.h"
+    #import "ArtsyAPI+Browse.h"
+    #import "ArtsyAPI+CurrentUserFunctions.h"
+    #import "ArtsyAPI+DeviceTokens.h"
+    #import "ArtsyAPI+Feed.h"
+    #import "ArtsyAPI+Following.h"
+    #import "ArtsyAPI+Profiles.h"
+    #import "ArtsyAPI+Posts.h"
+    #import "ArtsyAPI+Artists.h"
+    #import "ArtsyAPI+Genes.h"
+    #import "ArtsyAPI+ListCollection.h"
+    #import "ArtsyAPI+RelatedModels.h"
+    #import "ArtsyAPI+SiteFunctions.h"
+    #import "ArtsyAPI+Search.h"
+    #import "ArtsyAPI+Sales.h"
+    #import "ArtsyAPI+Fairs.h"
+    #import "ArtsyAPI+OrderedSets.h"
+    #import "ArtsyAPI+Shows.h"
+    #import "ArtsyAPI+SystemTime.h"
+    #import "ArtsyAPI+ErrorHandlers.h"
+
+    #import "Artwork.h"
+    #import "Artist.h"
+    #import "User.h"
+    #import "ProfileOwner.h"
+    #import "Profile.h"
+    #import "Gene.h"
+    #import "Partner.h"
+    #import "PartnerShow.h"
+    #import "Sale.h"
+    #import "SaleArtwork.h"
+    #import "FairOrganizer.h"
+    #import "Fair.h"
+    #import "Post.h"
+    #import "SiteHeroUnit.h"
+    #import "SiteFeature.h"
+    #import "FeaturedLink.h"
+    #import "OrderedSet.h"
+    #import "Tag.h"
+    #import "AuctionLot.h"
+    #import "Video.h"
+    #import "Follow.h"
+    #import "PartnerShowFairLocation.h"
+    #import "MapFeature.h"
+    #import "SystemTime.h"
+    #import "Location.h"
+
+    #import "ARFonts.h"
+
+    #import "UIImage+ImageFromColor.h"
+    #import "UIImageView+AsyncImageLoading.h"
+    #import "UILabel+Typography.h"
+    #import "NSString+StringSize.h"
+    #import "UIDevice-Hardware.h"
+    #import "UIScrollView+HitTest.h"
+    #import "MTLModel+JSON.h"
+    #import "MTLModel+Dictionary.h"
+    #import "AFHTTPRequestOperation+JSON.h"
+
+    #import <Artsy+UILabels/ARLabelSubclasses.h>
+    #import <Artsy-UIButtons/ARButtonSubclasses.h>
+    #import "ARSeparatorViews.h"
+    #import "ARCustomEigenLabels.h"
+
     #import "AROptions.h"
     #import "ARTheme.h"
     #import "ARSwitchBoard.h"
@@ -58,21 +121,6 @@
     #import "ARDeveloperOptions.h"
     #import "ARAutoLayoutDebugging.h"
     #import "ARMacros.h"
-
-
-    #ifdef DEBUG
-    static const int ddLogLevel = DDLogLevelVerbose;
-    static const int httpLogLevel = AFLoggerLevelInfo;
-    #else
-    static const int ddLogLevel = DDLogLevelWarning;
-    static const int httpLogLevel = AFLoggerLevelError;
-    #endif
-
-    #ifdef DEMO_MODE
-    static const BOOL ARIsRunningInDemoMode = YES;
-    #else
-    static const BOOL ARIsRunningInDemoMode = NO;
-    #endif
 
     #import "ARLogger.h"
 #endif
@@ -90,10 +138,10 @@
 //    autoreleasepool {} \
 //    metamacro_foreach_cxt(rac_weakify_,, __weak, __VA_ARGS__)
 
-#define _strongify(...) \
-    try {} @finally {} \
-    _Pragma("clang diagnostic push") \
-    _Pragma("clang diagnostic ignored \"-Wshadow\"") \
-    metamacro_foreach(rac_strongify_,, __VA_ARGS__) \
-    _Pragma("clang diagnostic pop")
+//#define _strongify(...) \
+    //try {} @finally {} \
+    //_Pragma("clang diagnostic push") \
+    //_Pragma("clang diagnostic ignored \"-Wshadow\"") \
+    //metamacro_foreach(rac_strongify_,, __VA_ARGS__) \
+    //_Pragma("clang diagnostic pop")
 
