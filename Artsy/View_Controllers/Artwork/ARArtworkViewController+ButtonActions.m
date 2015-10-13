@@ -2,6 +2,7 @@
 #import <Adjust/Adjust.h>
 #import <UIAlertView+Blocks/UIAlertView+Blocks.h>
 
+#import "ArtsyAPI+Artworks.h"
 #import "ARArtworkViewController+ButtonActions.h"
 #import "ARZoomArtworkImageViewController.h"
 #import "ARArtworkInfoViewController.h"

@@ -3,7 +3,9 @@
 #import <FODFormKit/FODForm.h>
 #import <FODFormKit/FODFormBuilder.h>
 
+#import "ArtsyAPI+CurrentUserFunctions.h"
 #import "ARUserManager.h"
+#import "ARViewTagConstants.h"
 
 
 @interface ARUserSettingsViewController () <FODFormViewControllerDelegate, ARMenuAwareViewController>

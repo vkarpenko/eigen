@@ -29,6 +29,7 @@
 #import "UIViewController+ARStateRestoration.h"
 #import "ARNetworkConstants.h"
 #import "ArtsyAPI+Private.h"
+#import "ArtsyAPI+SiteFunctions.h"
 #import "ARFileUtils.h"
 #import "ARSpotlight.h"
 

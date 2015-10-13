@@ -1,4 +1,6 @@
 #import "ARAdminSettingsViewController.h"
+
+#import "ARDefaults.h"
 #import "ARGroupedTableViewCell.h"
 #import "ARAnimatedTickView.h"
 #import "ARAppDelegate.h"

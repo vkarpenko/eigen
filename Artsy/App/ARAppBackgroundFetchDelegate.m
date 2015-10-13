@@ -1,6 +1,7 @@
 #import "ARAppBackgroundFetchDelegate.h"
-#import "ARFileUtils.h"
 
+#import "ArtsyAPI+Feed.h"
+#import "ARFileUtils.h"
 
 @implementation ARAppBackgroundFetchDelegate
 

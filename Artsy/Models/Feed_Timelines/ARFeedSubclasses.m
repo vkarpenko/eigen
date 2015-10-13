@@ -1,5 +1,6 @@
 #import "ARAppBackgroundFetchDelegate.h"
 
+#import "ArtsyAPI+Feed.h"
 
 @interface ARFeed ()
 - (NSOrderedSet *)parseItemsFromJSON:(NSDictionary *)result;
