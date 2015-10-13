@@ -12,6 +12,8 @@
 #import "ARtsyAPI+Private.h"
 #import "ARAppConstants.h"
 #import "User.h"
+#import "ARScrollNavigationChief.h"
+#import "ARLogger.h"
 
 
 @interface ARFeedViewController () <ARModernPartnerShowTableViewCellDelegate>

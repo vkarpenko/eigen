@@ -3,8 +3,10 @@
 #import "ARAppConstants.h"
 #import "ARAppDelegate.h"
 #import "ARCrossfadingImageView.h"
+#import "ARFonts.h"
 #import "ARUserManager.h"
 #import "UIView+HitTestExpansion.h"
+#import "ARDispatchManager.h"
 
 #import <UIAlertView+Blocks/UIAlertView+Blocks.h>
 

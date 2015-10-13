@@ -1,4 +1,5 @@
 #import "ARShowFeedViewController.h"
+
 #import "ARHeroUnitViewController.h"
 #import "ARHeroUnitsNetworkModel.h"
 #import "ARModernPartnerShowTableViewCell.h"
@@ -17,6 +18,10 @@
 #import "ARAnalyticsConstants.h"
 #import "ARTopTapThroughTableView.h"
 #import "ARAppConstants.h"
+#import "ARSeparatorViews.h"
+#import "ARNetworkErrorManager.h"
+#import "ARMenuAwareViewController.h"
+#import "ARLogger.h"
 
 static CGFloat ARShowFeedHeaderLabelMarginPad = 20;
 static CGFloat ARShowFeedHeaderLabelHeightPad = 55;

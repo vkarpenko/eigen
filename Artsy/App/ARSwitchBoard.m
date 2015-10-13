@@ -1,3 +1,5 @@
+#import "ARSwitchBoard.h"
+
 #import "ARAppConstants.h"
 #import "ARRouter.h"
 #import "Fair.h"
@@ -20,6 +22,7 @@
 #import "ARFavoritesViewController.h"
 #import "ARFairMapViewController.h"
 #import "ARProfileViewController.h"
+#import "ARTopMenuViewController.h"
 
 #import "ARTopMenuNavigationDataSource.h"
 

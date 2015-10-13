@@ -1,3 +1,5 @@
+#import "ARMenuAwareViewController.h"
+
 #import <FODFormKit/FODFormViewController.h>
 
 @class User;

@@ -7,7 +7,9 @@
 #import "ARUserManager.h"
 #import "ArtsyAPI+Private.h"
 #import "ARAppConstants.h"
+#import "ARFonts.h"
 #import "User.h"
+#import "ARTrialController.h"
 
 #import "UIView+HitTestExpansion.h"
 

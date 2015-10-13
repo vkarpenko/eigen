@@ -4,6 +4,7 @@
 
 #import "ArtsyAPI+Feed.h"
 #import "Partner.h"
+#import "ARDispatchManager.h"
 
 @interface ARFeed ()
 - (NSOrderedSet *)parseItemsFromJSON:(NSDictionary *)result;

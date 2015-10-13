@@ -2,6 +2,7 @@
 
 #import "ArtsyAPI+Feed.h"
 #import "ARFileUtils.h"
+#import "ARLogger.h"
 
 @implementation ARAppBackgroundFetchDelegate
 

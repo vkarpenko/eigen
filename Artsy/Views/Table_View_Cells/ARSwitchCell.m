@@ -1,5 +1,6 @@
 #import "ARSwitchCell.h"
 
+#import "ARFonts.h"
 
 @implementation ARSwitchCell
 

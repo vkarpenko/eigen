@@ -16,6 +16,10 @@
 #import "ARArtistViewController.h"
 #import "ARGeneViewController.h"
 #import "ARFavoriteItemViewCell.h"
+#import "ARFonts.h"
+#import "ARSwitchBoard.h"
+#import "ARScrollNavigationChief.h"
+#import "ARDispatchManager.h"
 
 
 @interface ARFavoritesViewController () <AREmbeddedModelsDelegate, UIScrollViewDelegate, ARSwitchViewDelegate, ARArtworkMasonryLayoutProvider>

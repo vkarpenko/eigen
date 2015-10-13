@@ -8,6 +8,7 @@
 #import "ARFeedSubclasses.h"
 #import "FeaturedLink.h"
 #import "SiteHeroUnit.h"
+#import "ARNavigationController.h"
 
 #import <SDWebImage/SDWebImagePrefetcher.h>
 

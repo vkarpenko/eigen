@@ -1,5 +1,8 @@
 #import "ARCountdownView.h"
 
+#import "ARFonts.h"
+#import "ARSystemTime.h"
+
 
 @interface ARCountdownView ()
 @property (nonatomic, strong) NSTimer *timer;

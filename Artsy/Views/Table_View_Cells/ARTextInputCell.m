@@ -1,5 +1,6 @@
 #import "ARTextInputCell.h"
 
+#import "ARFonts.h"
 
 @implementation ARTextInputCell
 

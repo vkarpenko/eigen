@@ -5,6 +5,7 @@
 #import "FeaturedLink.h"
 #import "User.h"
 #import "ARAppConstants.h"
+#import "ARSwitchBoard.h"
 
 @implementation ARFeedLinkUnitViewController
 
