@@ -10,6 +10,8 @@
 #import "ARModernPartnerShowTableViewCell.h"
 #import "UIViewController+FullScreenLoading.h"
 #import "ARtsyAPI+Private.h"
+#import "ARAppConstants.h"
+#import "User.h"
 
 
 @interface ARFeedViewController () <ARModernPartnerShowTableViewCellDelegate>

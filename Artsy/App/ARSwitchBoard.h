@@ -1,7 +1,11 @@
 #import "ARFairAwareObject.h"
 
+@class Artwork;
 @class ARPostFeedItem;
 @class ARFollowArtistFeedItem;
+@class Fair;
+@class Gene;
+@class PartnerShow;
 
 // View Controller Forward Declarations
 

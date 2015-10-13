@@ -1,5 +1,7 @@
 #import "ARAuctionArtworkResultsViewController.h"
 #import "ARAuctionArtworkTableViewCell.h"
+
+#import "Artwork.h"
 #import "ARPageSubtitleView.h"
 #import "ARFeedStatusIndicatorTableViewCell.h"
 

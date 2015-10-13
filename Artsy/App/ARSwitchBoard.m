@@ -1,6 +1,7 @@
+#import "ARAppConstants.h"
 #import "ARRouter.h"
-#import <JLRoutes/JLRoutes.h>
-#import <UIAlertView+Blocks/UIAlertView+Blocks.h>
+#import "Fair.h"
+#import "User.h"
 
 // View Controllers
 #import "ARArtworkSetViewController.h"
@@ -21,6 +22,9 @@
 #import "ARProfileViewController.h"
 
 #import "ARTopMenuNavigationDataSource.h"
+
+#import <JLRoutes/JLRoutes.h>
+#import <UIAlertView+Blocks/UIAlertView+Blocks.h>
 
 
 @interface ARSwitchBoard ()

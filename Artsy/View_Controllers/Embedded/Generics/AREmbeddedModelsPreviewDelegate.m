@@ -1,9 +1,13 @@
 #import "AREmbeddedModelsPreviewDelegate.h"
+
+#import "Artist.h"
+#import "Artwork.h"
 #import "AREmbeddedModelsViewController.h"
 #import "AREmbeddedModelPreviewViewController.h"
 #import "ARSwitchBoard.h"
 #import "ARTopMenuViewController.h"
 #import "ARSpotlight.h"
+#import "Gene.h"
 
 
 @interface AREmbeddedModelsPreviewDelegate ()

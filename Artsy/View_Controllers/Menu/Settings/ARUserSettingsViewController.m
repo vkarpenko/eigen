@@ -6,6 +6,7 @@
 #import "ArtsyAPI+CurrentUserFunctions.h"
 #import "ARUserManager.h"
 #import "ARViewTagConstants.h"
+#import "User.h"
 
 
 @interface ARUserSettingsViewController () <FODFormViewControllerDelegate, ARMenuAwareViewController>

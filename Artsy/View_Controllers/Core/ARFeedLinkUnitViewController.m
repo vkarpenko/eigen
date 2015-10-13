@@ -2,7 +2,9 @@
 
 #import "ArtsyAPI+OrderedSets.h"
 #import "ARNavigationButton.h"
-
+#import "FeaturedLink.h"
+#import "User.h"
+#import "ARAppConstants.h"
 
 @implementation ARFeedLinkUnitViewController
 
