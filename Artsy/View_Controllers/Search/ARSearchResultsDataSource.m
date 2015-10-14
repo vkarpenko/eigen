@@ -1,6 +1,8 @@
 #import "ARSearchResultsDataSource.h"
 #import <AFNetworking/UIImageView+AFNetworking.h>
 
+#import <Mantle/EXTScope.h>
+
 @implementation ARSearchResultsDataSource
 
 - (id)init

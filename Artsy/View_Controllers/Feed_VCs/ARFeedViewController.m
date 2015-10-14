@@ -17,6 +17,9 @@
 
 #import "UIDevice-Hardware.h"
 
+#import <FLKAutoLayout/UIView+FLKAutoLayout.h>
+#import <Mantle/EXTScope.h>
+
 @interface ARFeedViewController () <ARModernPartnerShowTableViewCellDelegate>
 @property (nonatomic, strong) ARReusableLoadingView *loadingView;
 @property (nonatomic, strong) ARFeedTimeline *feedTimeline;

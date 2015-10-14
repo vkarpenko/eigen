@@ -3,7 +3,9 @@
 #import "Artwork.h"
 #import "ARArtworkPriceRowView.h"
 #import "ARFonts.h"
+
 #import <Artsy+UILabels/UIView+ARDrawing.h>
+#import <FLKAutoLayout/UIView+FLKAutoLayout.h>
 
 
 @interface ARArtworkPriceView ()

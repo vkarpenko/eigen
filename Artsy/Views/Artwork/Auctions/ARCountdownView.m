@@ -3,6 +3,8 @@
 #import "ARFonts.h"
 #import "ARSystemTime.h"
 
+#import <FLKAutoLayout/UIView+FLKAutoLayout.h>
+
 
 @interface ARCountdownView ()
 @property (nonatomic, strong) NSTimer *timer;

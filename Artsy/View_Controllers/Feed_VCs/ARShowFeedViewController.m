@@ -25,6 +25,11 @@
 
 #import "UIDevice-Hardware.h"
 
+#import <Artsy+UILabels/ARLabelSubclasses.h>
+#import <ReactiveCocoa/ReactiveCocoa.h>
+#import <FLKAutoLayout/UIView+FLKAutoLayout.h>
+#import <Mantle/EXTScope.h>
+
 static CGFloat ARShowFeedHeaderLabelMarginPad = 20;
 static CGFloat ARShowFeedHeaderLabelHeightPad = 55;
 

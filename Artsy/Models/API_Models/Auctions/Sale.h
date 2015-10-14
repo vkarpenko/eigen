@@ -1,6 +1,6 @@
 #import <Mantle/Mantle.h>
 
-@class BuyersPremium;
+@class AFHTTPRequestOperation, BuyersPremium;
 
 
 @interface Sale : MTLModel <MTLJSONSerializing>

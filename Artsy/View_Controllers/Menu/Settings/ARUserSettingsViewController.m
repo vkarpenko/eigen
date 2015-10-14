@@ -13,6 +13,8 @@
 
 #import "UILabel+Typography.h"
 
+#import <Mantle/EXTScope.h>
+
 @interface ARUserSettingsViewController () <FODFormViewControllerDelegate, ARMenuAwareViewController>
 @property (nonatomic, strong) User *user;
 @end

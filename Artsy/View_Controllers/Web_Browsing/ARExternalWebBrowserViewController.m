@@ -8,6 +8,7 @@
 
 #import <FLKAutoLayout/UIViewController+FLKAutoLayout.h>
 #import <JLRoutes/JLRoutes.h>
+#import <FLKAutoLayout/UIView+FLKAutoLayout.h>
 
 
 @interface ARExternalWebBrowserViewController () <UIGestureRecognizerDelegate, UIScrollViewDelegate>

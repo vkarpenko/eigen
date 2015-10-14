@@ -11,6 +11,7 @@
 #import "ARNavigationController.h"
 
 #import <SDWebImage/SDWebImagePrefetcher.h>
+#import <ObjectiveSugar/ObjectiveSugar.h>
 
 static ARNavigationController *
 WebViewNavigationControllerWithPath(NSString *path)

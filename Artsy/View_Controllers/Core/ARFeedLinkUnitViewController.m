@@ -9,6 +9,9 @@
 
 #import "MTLModel+JSON.h"
 
+#import <ReactiveCocoa/ReactiveCocoa.h>
+#import <Mantle/EXTScope.h>
+
 @implementation ARFeedLinkUnitViewController
 
 - (void)fetchLinks:(void (^)(void))completion

@@ -7,6 +7,7 @@
 #import <HockeySDK-Source/BITHockeyManager.h>
 #import <Mantle/NSDictionary+MTLManipulationAdditions.h>
 #import <Adjust/Adjust.h>
+#import <AFNetworking/AFNetworking.h>
 
 #import "Artist.h"
 #import "Artwork.h"
@@ -335,7 +336,7 @@
                             ARAnalyticsEventName: ARAnalyticsArtworkSave,
                             ARAnalyticsSelectorName: NSStringFromSelector(@selector(tappedArtworkFavorite:)),
                             ARAnalyticsShouldFire: ^BOOL(ARArtworkViewController *controller, NSArray *parameters) {
-                                ARHeartButton *sender = parameters.first;
+                                ARHeartButton *sender = parameters.firstObject;
                                 return sender.isHearted == YES;
                             },
                             ARAnalyticsProperties: ^NSDictionary*(ARArtworkViewController *controller, NSArray *parameters){
@@ -350,7 +351,7 @@
                             ARAnalyticsEventName: ARAnalyticsArtworkUnsave,
                             ARAnalyticsSelectorName: NSStringFromSelector(@selector(tappedArtworkFavorite:)),
                             ARAnalyticsShouldFire: ^BOOL(ARArtworkViewController *controller, NSArray *parameters) {
-                                ARHeartButton *sender = parameters.first;
+                                ARHeartButton *sender = parameters.firstObject;
                                 return sender.isHearted == NO;
                             },
                             ARAnalyticsProperties: ^NSDictionary*(ARArtworkViewController *controller, NSArray *parameters){
@@ -382,7 +383,7 @@
                             ARAnalyticsEventName: ARAnalyticsAuctionBidTapped,
                             ARAnalyticsSelectorName: NSStringFromSelector(@selector(bidCompleted:)),
                             ARAnalyticsProperties: ^NSDictionary*(ARArtworkViewController *controller, NSArray *parameters){
-                                SaleArtwork *saleArtwork = parameters.first;
+                                SaleArtwork *saleArtwork = parameters.firstObject;
                                 return @{
                                     @"artwork_slug": controller.artwork.artworkID ?: @"",
                                     @"artist_slug": controller.artwork.artist.artistID ?: @"",
@@ -423,7 +424,7 @@
                             ARAnalyticsSelectorName: @"inquiryFailed:",
                             ARAnalyticsProperties: ^NSDictionary*(ARInquireForArtworkViewController *controller, NSArray *parameters) {
 
-                                NSError *error = [parameters first];
+                                NSError *error = [parameters firstObject];
                                 NSData *data = error.userInfo[AFNetworkingOperationFailingURLResponseDataErrorKey];
                                 NSDictionary *recoverySuggestion;
                                 NSString *responseString = @"";
@@ -507,7 +508,7 @@
                             ARAnalyticsEventName: ARAnalyticsSignInEmail,
                             ARAnalyticsSelectorName: NSStringFromSelector(@selector(loggedInWithType:user:)),
                             ARAnalyticsShouldFire: ^BOOL(ARLoginViewController *controller, NSArray *parameters){
-                                NSNumber *typeNumber = parameters.first;
+                                NSNumber *typeNumber = parameters.firstObject;
                                 ARLoginViewControllerLoginType type = typeNumber.integerValue;
                                 return type == ARLoginViewControllerLoginTypeEmail;
                             },
@@ -516,7 +517,7 @@
                             ARAnalyticsEventName: ARAnalyticsSignInTwitter,
                             ARAnalyticsSelectorName: NSStringFromSelector(@selector(loggedInWithType:user:)),
                             ARAnalyticsShouldFire: ^BOOL(ARLoginViewController *controller, NSArray *parameters){
-                                NSNumber *typeNumber = parameters.first;
+                                NSNumber *typeNumber = parameters.firstObject;
                                 ARLoginViewControllerLoginType type = typeNumber.integerValue;
                                 return type == ARLoginViewControllerLoginTypeTwitter;
                             },
@@ -525,7 +526,7 @@
                             ARAnalyticsEventName: ARAnalyticsSignInFacebook,
                             ARAnalyticsSelectorName: NSStringFromSelector(@selector(loggedInWithType:user:)),
                             ARAnalyticsShouldFire: ^BOOL(ARLoginViewController *controller, NSArray *parameters){
-                                NSNumber *typeNumber = parameters.first;
+                                NSNumber *typeNumber = parameters.firstObject;
                                 ARLoginViewControllerLoginType type = typeNumber.integerValue;
                                 return type == ARLoginViewControllerLoginTypeFacebook;
                             },
@@ -598,7 +599,7 @@
                             ARAnalyticsEventName: ARAnalyticsGeneFollow,
                             ARAnalyticsSelectorName: NSStringFromSelector(@selector(toggleFollowingGene:)),
                             ARAnalyticsProperties: ^NSDictionary*(ARGeneViewController *controller, NSArray *parameters){
-                                ARHeartButton *sender = parameters.first;
+                                ARHeartButton *sender = parameters.firstObject;
                                 return @{
                                     @"followed": sender.isHearted? @"yes" : @"no",
                                     @"gene_id" : controller.gene.geneID ?: @"",
@@ -609,7 +610,7 @@
                             ARAnalyticsEventName: ARAnalyticsHearted,
                             ARAnalyticsSelectorName: NSStringFromSelector(@selector(toggleFollowingGene:)),
                             ARAnalyticsShouldFire: ^BOOL (ARGeneViewController *controller, NSArray *parameters) {
-                                ARHeartButton *sender = parameters.first;
+                                ARHeartButton *sender = parameters.firstObject;
                                 return sender.hearted;
                             },
                         },
@@ -617,7 +618,7 @@
                             ARAnalyticsEventName: ARAnalyticsUnhearted,
                             ARAnalyticsSelectorName: NSStringFromSelector(@selector(toggleFollowingGene:)),
                             ARAnalyticsShouldFire: ^BOOL (ARGeneViewController *controller, NSArray *parameters) {
-                                ARHeartButton *sender = parameters.first;
+                                ARHeartButton *sender = parameters.firstObject;
                                 return sender.hearted;
                             },
                         }
@@ -667,11 +668,11 @@
                             ARAnalyticsEventName: ARAnalyticsArtistUnfollow,
                             ARAnalyticsSelectorName: NSStringFromSelector(@selector(searchToggleFollowStatusForArtist:atIndexPath:)),
                             ARAnalyticsShouldFire: ^BOOL (ARPersonalizeViewController *controller, NSArray *parameters) {
-                                Artist *artist = parameters.first;
+                                Artist *artist = parameters.firstObject;
                                 return [controller.artistController hasArtist:artist];
                             },
                             ARAnalyticsProperties: ^NSDictionary*(ARPersonalizeViewController *controller, NSArray *parameters){
-                                Artist *artist = parameters.first;
+                                Artist *artist = parameters.firstObject;
                                 return @{
                                     @"source_screen": @"Onboarding",
                                     @"artist_slug" : artist.artistID,
@@ -682,11 +683,11 @@
                             ARAnalyticsEventName: ARAnalyticsArtistFollow,
                             ARAnalyticsSelectorName: NSStringFromSelector(@selector(searchToggleFollowStatusForArtist:atIndexPath:)),
                             ARAnalyticsShouldFire: ^BOOL (ARPersonalizeViewController *controller, NSArray *parameters) {
-                                Artist *artist = parameters.first;
+                                Artist *artist = parameters.firstObject;
                                 return !([controller.artistController hasArtist:artist]);
                             },
                             ARAnalyticsProperties: ^NSDictionary*(ARPersonalizeViewController *controller, NSArray *parameters){
-                                Artist *artist = parameters.first;
+                                Artist *artist = parameters.firstObject;
                                 return @{
                                     @"source_screen": @"Onboarding",
                                     @"artist_slug" : artist.artistID,
@@ -814,7 +815,7 @@
                             ARAnalyticsEventName: ARAnalyticsArtistFollow,
                             ARAnalyticsSelectorName: NSStringFromSelector(@selector(toggleFollowingArtist:)),
                             ARAnalyticsShouldFire: ^BOOL(ARArtistViewController *controller, NSArray *parameters){
-                                ARHeartButton *sender = parameters.first;
+                                ARHeartButton *sender = parameters.firstObject;
                                 return sender.isHearted == YES;
                             },
                             ARAnalyticsProperties: ^NSDictionary*(ARArtistViewController *controller, NSArray *parameters){
@@ -828,7 +829,7 @@
                             ARAnalyticsEventName: ARAnalyticsArtistUnfollow,
                             ARAnalyticsSelectorName: NSStringFromSelector(@selector(toggleFollowingArtist:)),
                             ARAnalyticsShouldFire: ^BOOL(ARArtistViewController *controller, NSArray *parameters){
-                                ARHeartButton *sender = parameters.first;
+                                ARHeartButton *sender = parameters.firstObject;
                                 return sender.isHearted == NO;
                             },
                             ARAnalyticsProperties: ^NSDictionary*(ARArtistViewController *controller, NSArray *parameters){
@@ -877,7 +878,7 @@
                             ARAnalyticsEventName: ARAnalyticsFairFeaturedLinkSelected,
                             ARAnalyticsSelectorName: NSStringFromSelector(@selector(didSelectFeaturedLink:)),
                             ARAnalyticsProperties: ^NSDictionary*(ARFairViewController *controller, NSArray *parameters){
-                                FeaturedLink *featuredLink = parameters.first;
+                                FeaturedLink *featuredLink = parameters.firstObject;
                                 return @{
                                     @"profile_id" : controller.fair.organizer.profileID ?: @"",
                                     @"fair_id" : controller.fair.fairID ?: @"",
@@ -889,7 +890,7 @@
                             ARAnalyticsEventName: ARAnalyticsFairPostSelected,
                             ARAnalyticsSelectorName: NSStringFromSelector(@selector(didSelectPost:)),
                             ARAnalyticsProperties: ^NSDictionary*(ARFairViewController *controller, NSArray *parameters){
-                                NSString *postURL = parameters.first;
+                                NSString *postURL = parameters.firstObject;
                                 return @{
                                     @"profile_id" : controller.fair.organizer.profileID ?: @"",
                                     @"fair_id" : controller.fair.fairID ?: @"",
@@ -901,7 +902,7 @@
                             ARAnalyticsEventName: ARAnalyticsFairFeaturedLinkSelected,
                             ARAnalyticsSelectorName: NSStringFromSelector(@selector(buttonPressed:)),
                             ARAnalyticsProperties: ^NSDictionary*(ARFairViewController *controller, NSArray *parameters){
-                                ARButtonWithImage *button = parameters.first;
+                                ARButtonWithImage *button = parameters.firstObject;
                                 return @{
                                     @"profile_id" : controller.fair.organizer.profileID ?: @"",
                                     @"fair_id" : controller.fair.fairID ?: @"",
@@ -913,7 +914,7 @@
                             ARAnalyticsEventName: ARAnalyticsFairOverviewSelection,
                             ARAnalyticsSelectorName: ARAnalyticsSelector(buttonPressed:),
                             ARAnalyticsProperties:  ^NSDictionary*(ARFairViewController *controller, NSArray *parameters){
-                                ARButtonWithImage *button = parameters.first;
+                                ARButtonWithImage *button = parameters.firstObject;
                                 return @{
                                     @"button_text" : button.title ?: @"",
                                 };
@@ -960,7 +961,7 @@
                             ARAnalyticsEventName: ARAnalyticsOnboardingCompletedPriceRange,
                             ARAnalyticsSelectorName: NSStringFromSelector(@selector(setPriceRangeDone:)),
                             ARAnalyticsProperties: ^NSDictionary*(id controller, NSArray *parameters){
-                                NSInteger range = [parameters.first integerValue];
+                                NSInteger range = [parameters.firstObject integerValue];
                                 NSString *stringRange = [NSString stringWithFormat:@"%@", @(range)];
                                 return @{ @"price_range" : stringRange };
                             },
@@ -978,7 +979,7 @@
                             ARAnalyticsEventName: ARAnalyticsOnboardingCompletedCollectorLevel,
                             ARAnalyticsSelectorName: NSStringFromSelector(@selector(collectorLevelDone:)),
                             ARAnalyticsProperties: ^NSDictionary*(id controller, NSArray *parameters){
-                                ARCollectorLevel level = [parameters.first integerValue];
+                                ARCollectorLevel level = [parameters.firstObject integerValue];
                                 NSString *collectorLevel = [ARCollectorStatusViewController stringFromCollectorLevel:level];
                                 return @{
                                     @"collector_level" : collectorLevel
@@ -1011,7 +1012,7 @@
                             ARAnalyticsEventName: ARAnalyticsShowTrialSplash,
                             ARAnalyticsSelectorName: NSStringFromSelector(@selector(presentTrialWithContext:success:)),
                             ARAnalyticsProperties: ^NSDictionary*(ARTrialController *controller, NSArray *parameters){
-                                enum ARTrialContext context = [parameters.first integerValue];
+                                enum ARTrialContext context = [parameters.firstObject integerValue];
                                 return @{
                                     @"context" : [ARTrialController stringForTrialContext:context],
                                     @"tap_threshold" : @(controller.threshold)
@@ -1032,7 +1033,7 @@
                             },
                             ARAnalyticsProperties: ^NSDictionary*(ARSharingController * controller, NSArray *parameters){
                                 NSString *itemType = NSStringFromClass([controller.object class]).lowercaseString;
-                                NSString *activityType = parameters.first;
+                                NSString *activityType = parameters.firstObject;
                                 return @{
                                     @"object_type" : itemType ?: @"",
                                     @"service" : activityType ?: @""

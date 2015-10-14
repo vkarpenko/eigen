@@ -8,6 +8,8 @@
 #import "AREmbeddedModelPreviewViewController.h"
 #import "ARTopMenuViewController.h"
 
+#import <FLKAutoLayout/UIView+FLKAutoLayout.h>
+
 @interface ARArtworkMasonryModule (Private)
 - (void)updateLayoutForSize:(CGSize)size;
 @end
