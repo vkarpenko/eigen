@@ -23,6 +23,8 @@
 #import "ARMenuAwareViewController.h"
 #import "ARLogger.h"
 
+#import "UIDevice-Hardware.h"
+
 static CGFloat ARShowFeedHeaderLabelMarginPad = 20;
 static CGFloat ARShowFeedHeaderLabelHeightPad = 55;
 

@@ -8,6 +8,8 @@
 #import "UIView+HitTestExpansion.h"
 #import "ARDispatchManager.h"
 
+#import "UIDevice-Hardware.h"
+
 #import <UIAlertView+Blocks/UIAlertView+Blocks.h>
 
 @interface ARSignUpSplashTextViewController : UIViewController

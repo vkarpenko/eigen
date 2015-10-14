@@ -11,6 +11,7 @@
 #import "ARTheme.h"
 #import "ARMenuAwareViewController.h"
 
+#import "UILabel+Typography.h"
 
 @interface ARUserSettingsViewController () <FODFormViewControllerDelegate, ARMenuAwareViewController>
 @property (nonatomic, strong) User *user;

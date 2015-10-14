@@ -12,6 +12,7 @@
 #import "ARTrialController.h"
 
 #import "UIView+HitTestExpansion.h"
+#import "UIDevice-Hardware.h"
 
 #import <JSBadgeView/JSBadgeView.h>
 #import <NPKeyboardLayoutGuide/NPKeyboardLayoutGuide.h>

@@ -4,6 +4,8 @@
 #import "ARNavigationController.h"
 #import "ARScrollNavigationChief.h"
 
+#import "UIDevice-Hardware.h"
+
 #import <FLKAutoLayout/UIViewController+FLKAutoLayout.h>
 #import <JLRoutes/JLRoutes.h>
 

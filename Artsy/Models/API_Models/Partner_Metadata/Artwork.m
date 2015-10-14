@@ -15,6 +15,8 @@
 #import "ARDispatchManager.h"
 #import "ARLogger.h"
 
+#import "MTLModel+JSON.h"
+
 @implementation Artwork {
     // If we give these as properties they can cause
     // chaos with Mantle & State Resotoration.

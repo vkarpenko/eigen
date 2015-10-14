@@ -41,6 +41,8 @@
 #import "ARDispatchManager.h"
 #import "ARLogger.h"
 
+#import "UIDevice-Hardware.h"
+
 #import <Keys/ArtsyKeys.h>
 #import "AREndOfLineInternalMobileWebViewController.h"
 #import "ARDefaults+SiteFeatures.h"

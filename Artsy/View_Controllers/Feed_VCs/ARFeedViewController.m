@@ -15,6 +15,7 @@
 #import "ARScrollNavigationChief.h"
 #import "ARLogger.h"
 
+#import "UIDevice-Hardware.h"
 
 @interface ARFeedViewController () <ARModernPartnerShowTableViewCellDelegate>
 @property (nonatomic, strong) ARReusableLoadingView *loadingView;
