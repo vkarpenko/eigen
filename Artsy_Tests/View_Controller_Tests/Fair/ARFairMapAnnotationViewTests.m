@@ -1,3 +1,5 @@
+#import "ARTestHelper.h"
+
 #import "ARFairMapAnnotationView.h"
 
 

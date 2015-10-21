@@ -1,3 +1,5 @@
+#import "ARTestHelper.h"
+
 #import "ARFairAwareObject.h"
 #import "ARFairGuideViewController.h"
 #import "ARSwitchBoard.h"

@@ -1,3 +1,5 @@
+#import "ARTestHelper.h"
+
 #import "ARExpectaExtensions.h"
 
 void _itTestsWithDevicesRecordingAsynchronouslyWithName(id self, int lineNumber, const char *fileName, BOOL record, BOOL async, NSString *name, id (^block)())

@@ -1,3 +1,7 @@
+#import "ARTestHelper.h"
+#import "SaleArtwork+Extensions.h"
+
+#import "Artwork.h"
 #import "ARArtworkActionsView.h"
 #import "ARAuctionBidderStateLabel.h"
 #import "ORStackView+ArtsyViews.h"

@@ -1,3 +1,5 @@
+#import "ARTestHelper.h"
+
 #import "ARBidButton.h"
 
 SpecBegin(ARBidButton);

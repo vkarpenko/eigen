@@ -1,3 +1,5 @@
+#import "ARTestHelper.h"
+
 #import "SpectaDSL+Sleep.h"
 
 void activelyWaitFor(double seconds, void (^block)())

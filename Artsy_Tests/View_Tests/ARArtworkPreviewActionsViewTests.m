@@ -1,3 +1,5 @@
+#import "ARTestHelper.h"
+
 #import "ARArtworkPreviewActionsView.h"
 #import "ARHeartButton.h"
 #import <Artsy-UIButtons/ARButtonSubclasses.h>

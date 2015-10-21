@@ -1,3 +1,5 @@
+#import "ARTestHelper.h"
+
 #import <FLKAutoLayout/UIView+FLKAutoLayout.h>
 #import "ARCollapsableTextView.h"
 

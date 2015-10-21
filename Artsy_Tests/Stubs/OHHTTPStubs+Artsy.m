@@ -1,3 +1,5 @@
+#import "ARTestHelper.h"
+
 #import "OHHTTPStubs+Artsy.h"
 #import "ARRouter.h"
 

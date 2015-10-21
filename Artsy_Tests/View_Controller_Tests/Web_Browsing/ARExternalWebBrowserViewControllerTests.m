@@ -1,3 +1,5 @@
+#import "ARTestHelper.h"
+
 #import "ARExternalWebBrowserViewController.h"
 #import "ARScrollNavigationChief.h"
 

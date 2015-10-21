@@ -1,7 +1,11 @@
+#import "ARTestHelper.h"
+
 #import "ARShowNetworkModel.h"
 #import "ArtsyAPI.h"
 #import "ArtsyAPI+Shows.h"
 #import "ARNetworkConstants.h"
+#import "PartnerShow.h"
+#import "Fair.h"
 
 SpecBegin(ARShowNetworkModel);
 

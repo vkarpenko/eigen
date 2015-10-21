@@ -1,3 +1,5 @@
+#import "ARTestHelper.h"
+
 #import <XCTest/XCTest.h>
 #import "ARFollowableButton.h"
 

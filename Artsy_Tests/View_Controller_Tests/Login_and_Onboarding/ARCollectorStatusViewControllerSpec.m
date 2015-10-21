@@ -1,3 +1,5 @@
+#import "ARTestHelper.h"
+
 #import "ARCollectorStatusViewController.h"
 
 SpecBegin(ARCollectorStatusViewController);

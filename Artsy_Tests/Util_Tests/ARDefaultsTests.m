@@ -1,3 +1,5 @@
+#import "ARTestHelper.h"
+
 #import "ARDefaults.h"
 
 SpecBegin(ARDefaults);

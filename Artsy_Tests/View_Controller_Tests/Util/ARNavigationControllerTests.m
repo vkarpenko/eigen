@@ -1,3 +1,5 @@
+#import "ARTestHelper.h"
+
 #import "ARNavigationController.h"
 #import "UIViewController+SimpleChildren.h"
 #import "ARPendingOperationViewController.h"

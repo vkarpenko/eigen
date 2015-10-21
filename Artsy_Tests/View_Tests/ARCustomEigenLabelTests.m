@@ -1,3 +1,5 @@
+#import "ARTestHelper.h"
+
 #import "ARCustomEigenLabels.h"
 
 SpecBegin(ARCustomEigenLabels);

@@ -1,6 +1,11 @@
+#import "ARTestHelper.h"
+
+#import "Artwork.h"
+#import "User.h"
 #import "ARInquireForArtworkViewController.h"
 #import "ARUserManager+Stubs.h"
 
+#import <Artsy-UIButtons/ARButtonSubclasses.h>
 
 @interface ARInquireForArtworkViewController (Testing)
 

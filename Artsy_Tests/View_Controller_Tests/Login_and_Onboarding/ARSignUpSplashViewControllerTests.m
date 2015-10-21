@@ -1,3 +1,5 @@
+#import "ARTestHelper.h"
+
 #import "ARSignUpSplashViewController.h"
 #import "ARCrossfadingImageView.h"
 

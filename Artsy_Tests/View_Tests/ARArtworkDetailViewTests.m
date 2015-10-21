@@ -1,3 +1,5 @@
+#import "ARTestHelper.h"
+
 #import "ARArtworkDetailView.h"
 
 SpecBegin(ARArtworkDetailView);

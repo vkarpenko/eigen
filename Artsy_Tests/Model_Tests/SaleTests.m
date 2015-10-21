@@ -1,3 +1,5 @@
+#import "ARTestHelper.h"
+
 SpecBegin(Sale);
 
 describe(@"past auction", ^{

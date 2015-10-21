@@ -1,3 +1,5 @@
+#import "ARTestHelper.h"
+
 #import "ARAspectRatioImageView.h"
 #import "UIImage+ImageFromColor.h"
 

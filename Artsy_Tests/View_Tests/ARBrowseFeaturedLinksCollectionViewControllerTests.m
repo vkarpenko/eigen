@@ -1,3 +1,5 @@
+#import "ARTestHelper.h"
+
 #import "ARBrowseFeaturedLinksCollectionViewController.h"
 #import "ARBrowseFeaturedLinksCollectionViewCell.h"
 #import "UIDevice-Hardware.h"

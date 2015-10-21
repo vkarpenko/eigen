@@ -1,3 +1,5 @@
+#import "ARTestHelper.h"
+
 #import "ARValueTransformer.h"
 
 SpecBegin(ARValueTransformerSpec);

@@ -1,3 +1,5 @@
+#import "ARTestHelper.h"
+
 #import "ARTheme.h"
 
 SpecBegin(ARTheme);

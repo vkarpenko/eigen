@@ -1,3 +1,5 @@
+#import "ARTestHelper.h"
+
 #import "ARFairGuideContainerViewController.h"
 #import "ARFairGuideViewController.h"
 

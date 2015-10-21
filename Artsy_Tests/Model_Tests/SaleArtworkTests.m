@@ -1,3 +1,5 @@
+#import "ARTestHelper.h"
+
 SpecBegin(SaleArtwork);
 
 describe(@"artwork for sale", ^{

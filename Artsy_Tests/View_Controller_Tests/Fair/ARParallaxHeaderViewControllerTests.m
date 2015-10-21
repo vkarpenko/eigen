@@ -1,3 +1,5 @@
+#import "ARTestHelper.h"
+
 #import "ARParallaxHeaderViewController.h"
 #import "Fair.h"
 #import "Profile.h"

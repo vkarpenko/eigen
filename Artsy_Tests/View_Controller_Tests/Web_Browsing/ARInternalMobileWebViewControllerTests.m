@@ -1,3 +1,5 @@
+#import "ARTestHelper.h"
+
 #import "AROptions.h"
 #import "ARInternalMobileWebViewController.h"
 #import "ARUserManager+Stubs.h"

@@ -1,3 +1,5 @@
+#import "ARTestHelper.h"
+
 #import "ARProfileViewController.h"
 #import "ArtsyAPI.h"
 #import <ARAnalytics/ARAnalytics.h>

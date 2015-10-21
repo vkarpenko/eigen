@@ -1,3 +1,5 @@
+#import "ARTestHelper.h"
+
 #import "ARRouter.h"
 #import "AROptions.h"
 #import "ARNetworkConstants.h"

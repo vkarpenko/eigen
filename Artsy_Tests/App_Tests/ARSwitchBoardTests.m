@@ -1,3 +1,5 @@
+#import "ARTestHelper.h"
+
 #import "ARSwitchBoard.h"
 #import "AROptions.h"
 #import "ARRouter.h"

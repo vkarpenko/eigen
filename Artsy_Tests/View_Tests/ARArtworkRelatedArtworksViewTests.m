@@ -1,3 +1,5 @@
+#import "ARTestHelper.h"
+
 #import "ARArtworkRelatedArtworksView.h"
 #import "AREmbeddedModelsViewController.h"
 #import "ARArtworkMasonryModule.h"

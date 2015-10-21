@@ -1,3 +1,5 @@
+#import "ARTestHelper.h"
+
 #import "UIViewController+InnermostTopViewController.h"
 
 SpecBegin(UINavigationController_InnermostTopViewController);

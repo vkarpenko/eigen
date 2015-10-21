@@ -1,3 +1,5 @@
+#import "ARTestHelper.h"
+
 #import "UIViewController+Testing.h"
 
 @implementation UIViewController (Testing)

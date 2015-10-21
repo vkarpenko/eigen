@@ -1,3 +1,5 @@
+#import "ARTestHelper.h"
+
 #import "ARArtistViewController.h"
 #import "AREmbeddedModelsViewController.h"
 #import "ARSwitchView.h"

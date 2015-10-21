@@ -1,3 +1,5 @@
+#import "ARTestHelper.h"
+
 #import "ARLoginViewController.h"
 #import "ARUserManager.h"
 #import "ARUserManager+Stubs.h"

@@ -1,3 +1,5 @@
+#import "ARTestHelper.h"
+
 #import "ARFairMapViewController.h"
 #import "ARTiledImageDataSourceWithImage.h"
 #import "ARFairShowMapper.h"

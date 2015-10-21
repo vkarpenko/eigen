@@ -1,3 +1,5 @@
+#import "ARTestHelper.h"
+
 #import "AREmbeddedModelPreviewViewController.h"
 #import "ARSharingController.h"
 #import "ARUserManager.h"

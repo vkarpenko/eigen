@@ -1,3 +1,6 @@
+#import "ARTestHelper.h"
+
+#import "Fair.h"
 #import "ARFeedItems.h"
 
 SpecBegin(Fair);

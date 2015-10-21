@@ -1,3 +1,5 @@
+#import "ARTestHelper.h"
+
 #import "Bid+Extensions.h"
 
 

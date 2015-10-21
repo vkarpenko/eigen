@@ -1,3 +1,5 @@
+#import "ARTestHelper.h"
+
 #import "ARFairPopupViewController.h"
 
 SpecBegin(ARFairPopupViewController);

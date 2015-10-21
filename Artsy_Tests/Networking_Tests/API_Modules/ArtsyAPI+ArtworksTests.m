@@ -1,3 +1,5 @@
+#import "ARTestHelper.h"
+
 #import "ArtsyAPI.h"
 #import "ArtsyAPI+Artworks.h"
 

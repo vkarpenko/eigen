@@ -1,3 +1,5 @@
+#import "ARTestHelper.h"
+
 #import <OHHTTPStubs/OHHTTPStubs.h>
 #import "ArtsyOHHTTPAPI.h"
 

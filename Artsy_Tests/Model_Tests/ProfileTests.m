@@ -1,3 +1,5 @@
+#import "ARTestHelper.h"
+
 SpecBegin(Profile);
 
 __block Profile *profile;

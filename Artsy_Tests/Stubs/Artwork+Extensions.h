@@ -1,4 +1,4 @@
-
+#import "Artwork.h"
 
 
 @interface Artwork (Extensions)

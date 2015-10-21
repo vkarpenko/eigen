@@ -1,3 +1,5 @@
+#import "ARTestHelper.h"
+
 #import "ARFavoritesViewController.h"
 #import "ARUserManager+Stubs.h"
 #import "AREmbeddedModelsViewController.h"

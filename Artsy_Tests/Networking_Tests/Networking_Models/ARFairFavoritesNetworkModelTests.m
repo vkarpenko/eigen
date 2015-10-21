@@ -1,3 +1,5 @@
+#import "ARTestHelper.h"
+
 #import "ARFairFavoritesNetworkModel.h"
 #import "ARUserManager+Stubs.h"
 #import "ARUserManager.h"

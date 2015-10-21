@@ -1,3 +1,5 @@
+#import "ARTestHelper.h"
+
 #import "ARFairAwareObject.h"
 #import "ARShowViewController.h"
 #import "UIDevice-Hardware.h"

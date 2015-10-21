@@ -1,3 +1,5 @@
+#import "ARTestHelper.h"
+
 #import "ARTestContext.h"
 #import "UIDevice-Hardware.h"
 

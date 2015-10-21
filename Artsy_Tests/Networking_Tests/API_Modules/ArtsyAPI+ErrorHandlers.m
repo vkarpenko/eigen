@@ -1,3 +1,6 @@
+#import "ARTestHelper.h"
+
+#import "ArtsyAPI+ErrorHandlers.h"
 #import "ArtsyAPI.h"
 #import "MutableNSURLResponse.h"
 

@@ -1,3 +1,5 @@
+#import "ARTestHelper.h"
+
 #import "ARArtworkInfoViewController.h"
 #import "ARTextView.h"
 #import "ARSwitchBoard.h"

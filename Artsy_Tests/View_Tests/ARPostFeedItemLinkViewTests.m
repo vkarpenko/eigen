@@ -1,3 +1,5 @@
+#import "ARTestHelper.h"
+
 #import "ARPostFeedItemLinkView.h"
 #import "ARPostFeedItem.h"
 

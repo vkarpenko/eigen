@@ -1,3 +1,5 @@
+#import "ARTestHelper.h"
+
 SpecBegin(MapFeature);
 
 it(@"maps every feature type to an image", ^{

@@ -1,3 +1,5 @@
+#import "ARTestHelper.h"
+
 #import "ARAppSearchViewController.h"
 #import "ARTopMenuViewController.h"
 

@@ -1,6 +1,10 @@
+#import "ARTestHelper.h"
+
+#import "User.h"
 #import "ARArtworkFavoritesNetworkModel.h"
 #import "ARUserManager+Stubs.h"
 #import "ArtsyAPI.h"
+#import "ArtsyAPI+Artworks.h"
 #import "Artwork+Extensions.h"
 
 

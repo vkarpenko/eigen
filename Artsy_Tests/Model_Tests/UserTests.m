@@ -1,3 +1,5 @@
+#import "ARTestHelper.h"
+
 SpecBegin(User);
 
 describe(@"with profile", ^{

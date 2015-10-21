@@ -1,3 +1,5 @@
+#import "ARTestHelper.h"
+
 #import "ARSharingController.h"
 #import "ARURLItemProvider.h"
 #import "ARMessageItemProvider.h"

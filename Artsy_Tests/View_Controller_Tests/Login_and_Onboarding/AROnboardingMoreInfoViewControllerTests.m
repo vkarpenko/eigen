@@ -1,3 +1,5 @@
+#import "ARTestHelper.h"
+
 #import "AROnboardingMoreInfoViewController.h"
 #import "ARAuthProviders.h"
 

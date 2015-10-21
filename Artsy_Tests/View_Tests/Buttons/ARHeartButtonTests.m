@@ -1,3 +1,5 @@
+#import "ARTestHelper.h"
+
 #import "ARHeartButton.h"
 
 SpecBegin(ARHeartButton);

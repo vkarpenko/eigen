@@ -1,3 +1,5 @@
+#import "ARTestHelper.h"
+
 #import "ARArtworkViewController.h"
 #import "ARArtworkView.h"
 

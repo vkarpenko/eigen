@@ -1,3 +1,5 @@
+#import "ARTestHelper.h"
+
 #import "ARTopMenuNavigationDataSource.h"
 #import "ARNavigationController.h"
 #import "ARBrowseViewController.h"

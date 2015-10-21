@@ -1,3 +1,5 @@
+#import "ARTestHelper.h"
+
 #import "ARBrowseCategoriesViewController.h"
 #import "ARBrowseFeaturedLinksCollectionViewController.h"
 #import <ORStackView/ORStackScrollView.h>

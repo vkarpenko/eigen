@@ -1,3 +1,5 @@
+#import "ARTestHelper.h"
+
 #import "ARCreateAccountViewController.h"
 #import "ARTopMenuViewController.h"
 #import "ARCustomEigenLabels.h"

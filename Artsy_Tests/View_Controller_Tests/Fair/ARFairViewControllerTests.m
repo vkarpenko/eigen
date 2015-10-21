@@ -1,3 +1,5 @@
+#import "ARTestHelper.h"
+
 #import "ARFairViewController.h"
 #import "ARNavigationButtonsViewController.h"
 #import "MTLModel+JSON.h"

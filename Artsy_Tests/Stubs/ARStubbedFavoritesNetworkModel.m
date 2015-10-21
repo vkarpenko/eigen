@@ -1,3 +1,5 @@
+#import "ARTestHelper.h"
+
 #import "ARStubbedFavoritesNetworkModel.h"
 
 @interface ARFavoritesNetworkModel (Private)

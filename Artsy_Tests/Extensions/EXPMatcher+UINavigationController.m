@@ -1,3 +1,5 @@
+#import "ARTestHelper.h"
+
 #import "EXPMatcher+UINavigationController.h"
 
 EXPMatcherImplementationBegin(haveViewControllerClasses, (NSArray * expectedClasses))

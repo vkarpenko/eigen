@@ -1,3 +1,5 @@
+#import "ARTestHelper.h"
+
 #import "ARHeroUnitsNetworkModel.h"
 #import "SiteHeroUnit.h"
 #import "ARUserManager+Stubs.h"

@@ -1,4 +1,6 @@
+#import "ARTestHelper.h"
 #import "SaleArtwork+Extensions.h"
+#import "MTLModel+Dictionary.h"
 
 
 @implementation SaleArtwork (Extensions)

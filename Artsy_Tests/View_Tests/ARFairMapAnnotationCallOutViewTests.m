@@ -1,3 +1,8 @@
+#import "ARTestHelper.h"
+
+#import "Fair.h"
+#import "PartnerShow.h"
+#import "ARFairMapAnnotation.h"
 #import "ARFairMapAnnotationCallOutView.h"
 #import <NAMapKit/NAMapView.h>
 

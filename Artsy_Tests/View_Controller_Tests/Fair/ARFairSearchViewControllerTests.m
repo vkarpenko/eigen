@@ -1,3 +1,5 @@
+#import "ARTestHelper.h"
+
 #import "ARFairSearchViewController.h"
 #import <ORStackView/ORStackScrollView.h>
 #import "SearchResult.h"

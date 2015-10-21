@@ -1,3 +1,5 @@
+#import "ARTestHelper.h"
+
 #import "ARFairPostsViewController.h"
 #import "ARPostFeedItemLinkView.h"
 #import "ARSwitchBoard.h"
