@@ -30,6 +30,8 @@ plugin 'cocoapods-keys', {
 
 target 'Artsy' do
 
+  pod "Accelerator", :git => "https://github.com/johnno1962/Accelerator"
+
   # Networking
   pod 'AFNetworking', "~> 2.5"
   pod 'AFOAuth1Client', :git => "https://github.com/lxcid/AFOAuth1Client.git", :tag => "0.4.0"

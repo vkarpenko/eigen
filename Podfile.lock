@@ -1,4 +1,5 @@
 PODS:
+  - Accelerator (101.9.9)
   - Adjust (4.2.7):
     - Adjust/Core (= 4.2.7)
   - Adjust/Core (4.2.7)
@@ -143,6 +144,7 @@ PODS:
     - OHHTTPStubs
 
 DEPENDENCIES:
+  - Accelerator (from `https://github.com/johnno1962/Accelerator`)
   - AFNetworkActivityLogger
   - AFNetworking (~> 2.5)
   - AFOAuth1Client (from `https://github.com/lxcid/AFOAuth1Client.git`, tag `0.4.0`)
@@ -199,6 +201,8 @@ DEPENDENCIES:
   - XCTest+OHHTTPStubSuiteCleanUp
 
 EXTERNAL SOURCES:
+  Accelerator:
+    :git: https://github.com/johnno1962/Accelerator
   AFOAuth1Client:
     :git: https://github.com/lxcid/AFOAuth1Client.git
     :tag: 0.4.0
@@ -224,6 +228,9 @@ EXTERNAL SOURCES:
     :git: https://github.com/1aurabrown/ORStackView.git
 
 CHECKOUT OPTIONS:
+  Accelerator:
+    :commit: 92ab1925e697af9efaed0511a2966392debb7058
+    :git: https://github.com/johnno1962/Accelerator
   AFOAuth1Client:
     :git: https://github.com/lxcid/AFOAuth1Client.git
     :tag: 0.4.0
@@ -250,6 +257,7 @@ CHECKOUT OPTIONS:
     :git: https://github.com/1aurabrown/ORStackView.git
 
 SPEC CHECKSUMS:
+  Accelerator: 4c7652e4a95b5a85ebb8ba9018183e13ceaa8174
   Adjust: 2c3d4db6047c6bba68d7c5ede63fbdc989eb57b7
   AFNetworkActivityLogger: 121486778117d53b3ab1c61d264b88081d0c3eee
   AFNetworking: 05edc0ac4c4c8cf57bcf4b84be5b0744b6d8e71e
