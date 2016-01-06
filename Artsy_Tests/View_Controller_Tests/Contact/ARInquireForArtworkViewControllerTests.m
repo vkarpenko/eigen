@@ -62,14 +62,6 @@ afterEach(^{
 });
 
 describe(@"logged in", ^{
-    beforeEach(^{
-        [ARUserManager stubAndLoginWithUsername];
-    });
-
-    afterEach(^{
-        [ARUserManager clearUserData];
-    });
-
     itHasAsyncronousSnapshotsForDevicesWithName(@"displays Contact Gallery when seller is a gallery", ^{
         ARInquireForArtworkViewController *vc = [[ARInquireForArtworkViewController alloc] initWithPartnerInquiryForArtwork:galleryArtwork fair:nil];
         [vc ar_presentWithFrame:[[UIScreen mainScreen] bounds]];
@@ -92,7 +84,6 @@ describe(@"logged in", ^{
 describe(@"logged out", ^{
     describe(@"contact information", ^{
         beforeEach(^{
-            [ARUserManager clearUserData];
             [ARUserManager sharedManager].trialUserName = @"Trial User";
             [ARUserManager sharedManager].trialUserEmail = @"trial@example.com";
         });
@@ -126,7 +117,6 @@ describe(@"logged out", ^{
         __block Artwork *artwork;
         
         beforeEach(^{
-            [ARUserManager clearUserData];
             [ARUserManager sharedManager].trialUserName = @"Trial User";
         });
 

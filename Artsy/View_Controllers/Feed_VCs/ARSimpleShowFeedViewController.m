@@ -239,7 +239,7 @@ static NSString *ARShowCellIdentifier = @"ARShowCellIdentifier";
     UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"About to Log Out" message:@"Your Artsy credentials are out of date." preferredStyle:UIAlertControllerStyleAlert];
     [alertController addAction:[UIAlertAction actionWithTitle:@"Log Out" style:UIAlertActionStyleDestructive handler:^(UIAlertAction *_Nonnull action) {
 
-        [ARUserManager logout];
+        [[ARUserManager sharedManager] logout];
     }]];
 
     [self presentViewController:alertController animated:YES completion:nil];

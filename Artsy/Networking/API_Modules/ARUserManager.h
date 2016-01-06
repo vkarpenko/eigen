@@ -6,9 +6,12 @@ extern NSString *const ARUserSessionStartedNotification;
 @interface ARUserManager : NSObject
 
 + (ARUserManager *)sharedManager;
-+ (void)logout;
-+ (void)logoutAndSetUseStaging:(BOOL)useStaging;
-+ (void)clearUserData;
+- (void)logout;
+- (void)logoutAndSetUseStaging:(BOOL)useStaging;
+
+/// Cleans up user data, and allows changing the staging
+/// environment. Note: using `nil` will make no changes to the staging environment choice.
+- (void)clearUserDataUseStaging:(id)useStaging;
 + (BOOL)didCreateAccountThisSession;
 
 + (void)identifyAnalyticsUser;

@@ -62,7 +62,7 @@ NSString *const ARLabOptionCell = @"LabOptionCell";
 
     [onboardingData setCellSelectionBlock:^(UITableView *tableView, NSIndexPath *indexPath) {
         [self showAlertViewWithTitle:@"Confirm Logout" message:@"App will exit. Please re-open to log back in." actionTitle:@"Logout" actionHandler:^{
-            [ARUserManager logout];
+            [[ARUserManager sharedManager] logout];
         }];
     }];
     return onboardingData;
@@ -119,7 +119,7 @@ NSString *const ARLabOptionCell = @"LabOptionCell";
 
     [crashCellData setCellSelectionBlock:^(UITableView *tableView, NSIndexPath *indexPath) {
         [self showAlertViewWithTitle:@"Confirm Logout" message:@"Switching servers requires logout. App will exit. Please re-open to log back in." actionTitle:@"Continue" actionHandler:^{
-            [ARUserManager logoutAndSetUseStaging:!useStaging];
+            [[ARUserManager sharedManager] logoutAndSetUseStaging:!useStaging];
         }];
     }];
     return crashCellData;

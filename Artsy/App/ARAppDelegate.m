@@ -74,7 +74,7 @@ static ARAppDelegate *_sharedInstance = nil;
 - (BOOL)application:(UIApplication *)application willFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     if (ARIsRunningInDemoMode) {
-        [ARUserManager clearUserData];
+        [[ARUserManager sharedManager] clearUserDataUseStaging:nil];
     }
 
     [ARDefaults setup];

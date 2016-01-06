@@ -6,18 +6,17 @@
 
 
 @interface ARUserManager (Testing)
-+ (void)clearUserData;
-+ (void)clearUserData:(ARUserManager *)manager useStaging:(id)useStaging;
+- (void)clearUserDataUseStaging:(id)useStaging;
+@property (nonatomic, strong) NSUserDefaults *defaults;
 @end
 
 SpecBegin(ARUserManager);
 
-beforeEach(^{
-    [ARUserManager clearUserData];
-});
+__block ARUserManager *manager;
 
-afterEach(^{
-    [OHHTTPStubs removeAllStubs];
+beforeEach(^{
+    manager = [[ARUserManager alloc] init];
+    manager.defaults = manager.defaults;
 });
 
 describe(@"login", ^{
@@ -41,7 +40,7 @@ describe(@"login", ^{
         it(@"remembers access token expiry date", ^{
             ISO8601DateFormatter *dateFormatter = [[ISO8601DateFormatter alloc] init];
             NSDate *expiryDate = [dateFormatter dateFromString:[ARUserManager stubAccessTokenExpiresIn]];
-            expect([expiryDate isEqualToDate:[[NSUserDefaults standardUserDefaults] objectForKey:AROAuthTokenExpiryDateDefault]]).to.beTruthy();
+            expect([expiryDate isEqualToDate:[manager.defaults objectForKey:AROAuthTokenExpiryDateDefault]]).to.beTruthy();
         });
 
         it(@"sets current user", ^{
@@ -125,55 +124,55 @@ describe(@"clearUserData", ^{
     describe(@"unsetting user defaults", ^{
 
         before(^{
-            [[NSUserDefaults standardUserDefaults] setValue:@"test value" forKey:@"TestKey"];
+            [manager.defaults setValue:@"test value" forKey:@"TestKey"];
         });
 
         after(^{
-            [ARDefaults resetDefaults];
+            [ARDefaults resetDefaults:manager.defaults];
         });
 
         it(@"sets use staging to previous YES value", ^{
-            [[NSUserDefaults standardUserDefaults] setValue:@(YES) forKey:ARUseStagingDefault];
-            expect([[NSUserDefaults standardUserDefaults] valueForKey:ARUseStagingDefault]).to.beTruthy();
-            expect([[NSUserDefaults standardUserDefaults] valueForKey:@"TestKey"]).to.equal(@"test value");
-            [ARUserManager clearUserData];
-            expect([[NSUserDefaults standardUserDefaults] valueForKey:ARUseStagingDefault]).to.beTruthy();
-            expect([[NSUserDefaults standardUserDefaults] valueForKey:@"TestKey"]).to.beNil();
+            [manager.defaults setValue:@(YES) forKey:ARUseStagingDefault];
+            expect([manager.defaults valueForKey:ARUseStagingDefault]).to.beTruthy();
+            expect([manager.defaults valueForKey:@"TestKey"]).to.equal(@"test value");
+            [manager clearUserDataUseStaging:nil];
+            expect([manager.defaults valueForKey:ARUseStagingDefault]).to.beTruthy();
+            expect([manager.defaults valueForKey:@"TestKey"]).to.beNil();
         });
 
         it(@"sets use staging to previous NO value", ^{
-            [[NSUserDefaults standardUserDefaults] setValue:@(NO) forKey:ARUseStagingDefault];
-            expect([[NSUserDefaults standardUserDefaults] valueForKey:ARUseStagingDefault]).to.beFalsy();
-            expect([[NSUserDefaults standardUserDefaults] valueForKey:@"TestKey"]).to.equal(@"test value");
-            [ARUserManager clearUserData];
-            expect([[NSUserDefaults standardUserDefaults] valueForKey:ARUseStagingDefault]).to.beFalsy();
-            expect([[NSUserDefaults standardUserDefaults] valueForKey:@"TestKey"]).to.beNil();
+            [manager.defaults setValue:@(NO) forKey:ARUseStagingDefault];
+            expect([manager.defaults valueForKey:ARUseStagingDefault]).to.beFalsy();
+            expect([manager.defaults valueForKey:@"TestKey"]).to.equal(@"test value");
+            [manager clearUserDataUseStaging:nil];
+            expect([manager.defaults valueForKey:ARUseStagingDefault]).to.beFalsy();
+            expect([manager.defaults valueForKey:@"TestKey"]).to.beNil();
         });
     });
 
     describe(@"clearUserDataAndSetUserStaging", ^{
         before(^{
-            [[NSUserDefaults standardUserDefaults] setValue:@"test value" forKey:@"TestKey"];
+            [manager.defaults setValue:@"test value" forKey:@"TestKey"];
         });
 
         after(^{
-            [ARDefaults resetDefaults];
+            [ARDefaults resetDefaults:manager.defaults];
         });
 
         it(@"explicitly sets staging default to yes", ^{
-            expect([[NSUserDefaults standardUserDefaults] valueForKey:ARUseStagingDefault]).to.beNil();
-            expect([[NSUserDefaults standardUserDefaults] valueForKey:@"TestKey"]).to.equal(@"test value");
-            [ARUserManager clearUserData:[ARUserManager sharedManager] useStaging:@(YES)];
-            expect([[NSUserDefaults standardUserDefaults] valueForKey:ARUseStagingDefault]).to.beTruthy();
-            expect([[NSUserDefaults standardUserDefaults] valueForKey:@"TestKey"]).to.beNil();
+            expect([manager.defaults valueForKey:ARUseStagingDefault]).to.beNil();
+            expect([manager.defaults valueForKey:@"TestKey"]).to.equal(@"test value");
+            [manager clearUserDataUseStaging:@(YES)];
+            expect([manager.defaults valueForKey:ARUseStagingDefault]).to.beTruthy();
+            expect([manager.defaults valueForKey:@"TestKey"]).to.beNil();
         });
         
         it(@"explicitly sets staging default to no", ^{
-            expect([[NSUserDefaults standardUserDefaults] valueForKey:ARUseStagingDefault]).to.beNil();
-            expect([[NSUserDefaults standardUserDefaults] valueForKey:@"TestKey"]).to.equal(@"test value");
-            [ARUserManager clearUserData:[ARUserManager sharedManager] useStaging:@(NO)];
-            expect([[NSUserDefaults standardUserDefaults] valueForKey:ARUseStagingDefault]).to.beFalsy();
-            expect([[NSUserDefaults standardUserDefaults] valueForKey:@"TestKey"]).to.beNil();
+            expect([manager.defaults valueForKey:ARUseStagingDefault]).to.beNil();
+            expect([manager.defaults valueForKey:@"TestKey"]).to.equal(@"test value");
+            [manager clearUserDataUseStaging:@(NO)];
+            expect([manager.defaults valueForKey:ARUseStagingDefault]).to.beFalsy();
+            expect([manager.defaults valueForKey:@"TestKey"]).to.beNil();
         });
 
     });
@@ -184,7 +183,7 @@ describe(@"clearUserData", ^{
         beforeEach(^{
             [ARUserManager stubAndLoginWithUsername];
             _userDataPath = [ARUserManager userDataPath];
-            [ARUserManager clearUserData];
+            [manager clearUserDataUseStaging:nil];
         });
         
         it(@"resets currentUser", ^{
@@ -223,7 +222,7 @@ describe(@"clearUserData", ^{
         [[NSHTTPCookieStorage sharedHTTPCookieStorage] setCookie:[NSHTTPCookie cookieWithProperties:cookieProperties]];
         expect(cookieStorage.cookies.count).to.equal(cookieCount + ARRouter.artsyHosts.count + 1);
         expect([cookieStorage cookiesForURL:[NSURL URLWithString:@"http://artsy.net"]].count).to.equal(1);
-        [ARUserManager clearUserData];
+        [manager clearUserDataUseStaging:nil];
         expect(cookieStorage.cookies.count).to.equal(cookieCount + 1);
         expect([cookieStorage cookiesForURL:[NSURL URLWithString:@"http://artsy.net"]].count).to.equal(0);
     });

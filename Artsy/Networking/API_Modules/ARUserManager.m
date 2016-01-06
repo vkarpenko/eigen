@@ -26,6 +26,7 @@ static BOOL ARUserManagerDisableSharedWebCredentials = NO;
 
 @interface ARUserManager ()
 @property (nonatomic, strong) NSObject<ARKeychainable> *keychain;
+@property (nonatomic, strong) NSUserDefaults *defaults;
 @property (nonatomic, strong) User *currentUser;
 @property (nonatomic, assign) BOOL didCreateAccountThisSession;
 @end
@@ -110,7 +111,7 @@ static BOOL ARUserManagerDisableSharedWebCredentials = NO;
 - (BOOL)hasValidAuthenticationToken
 {
     NSString *authToken = [self userAuthenticationToken];
-    NSDate *expiryDate = [[NSUserDefaults standardUserDefaults] objectForKey:AROAuthTokenExpiryDateDefault];
+    NSDate *expiryDate = [self.defaults objectForKey:AROAuthTokenExpiryDateDefault];
 
     BOOL tokenValid = expiryDate && [[[ARSystemTime date] GMTDate] earlierDate:expiryDate] != expiryDate;
     return authToken && tokenValid;
@@ -119,7 +120,7 @@ static BOOL ARUserManagerDisableSharedWebCredentials = NO;
 - (BOOL)hasValidXAppToken
 {
     NSString *xapp = [UICKeyChainStore stringForKey:ARXAppTokenKeychainKey];
-    NSDate *expiryDate = [[NSUserDefaults standardUserDefaults] objectForKey:ARXAppTokenExpiryDateDefault];
+    NSDate *expiryDate = [self.defaults objectForKey:ARXAppTokenExpiryDateDefault];
 
     BOOL tokenValid = expiryDate && [[[ARSystemTime date] GMTDate] earlierDate:expiryDate] != expiryDate;
     return xapp && tokenValid;
@@ -132,7 +133,7 @@ static BOOL ARUserManagerDisableSharedWebCredentials = NO;
 
 - (void)saveUserOAuthToken:(NSString *)token expiryDate:(NSDate *)expiryDate
 {
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    NSUserDefaults *defaults = self.defaults;
     [self.keychain setKeychainStringForKey:AROAuthTokenDefault value:token];
     [defaults setObject:expiryDate forKey:AROAuthTokenExpiryDateDefault];
 
@@ -505,48 +506,48 @@ static BOOL ARUserManagerDisableSharedWebCredentials = NO;
 
         [ARUserManager identifyAnalyticsUser];
 
-        [[NSUserDefaults standardUserDefaults] setObject:self.currentUser.userID forKey:ARUserIdentifierDefault];
-        [[NSUserDefaults standardUserDefaults] synchronize];
+        [self.defaults setObject:self.currentUser.userID forKey:ARUserIdentifierDefault];
+        [self.defaults synchronize];
     }
 }
 
-+ (void)logout
+- (void)logout
 {
     [self clearUserData];
     exit(0);
 }
 
-+ (void)logoutAndSetUseStaging:(BOOL)useStaging
+- (void)logoutAndSetUseStaging:(BOOL)useStaging
 {
-    [self clearUserData:[self sharedManager] useStaging:@(useStaging)];
+    [self clearUserDataUseStaging:@(useStaging)];
     exit(0);
 }
 
-+ (void)clearUserData
+- (void)clearUserData
 {
-    id useStaging = [[NSUserDefaults standardUserDefaults] valueForKey:ARUseStagingDefault];
-    [self clearUserData:[self sharedManager] useStaging:useStaging];
+    id useStaging = [self.defaults valueForKey:ARUseStagingDefault];
+    [self clearUserDataUseStaging:useStaging];
 }
 
 // This takes `id` instead of `BOOL` because if you call this method from `clearUserData` and
 // `ARUseStagingDefault` was not previously set, we don't want to explicitly set it to `0` or `NO`.
 // If the value passed is `nil`, we will leave `ARUseStagingDefault` unset after clearing all user defaults.
 
-+ (void)clearUserData:(ARUserManager *)manager useStaging:(id)useStaging
+- (void)clearUserDataUseStaging:(id)useStaging
 {
-    [manager deleteUserData];
-    [ARDefaults resetDefaults];
+    [self deleteUserData];
+    [ARDefaults resetDefaults:self.defaults];
 
-    [manager.keychain removeKeychainStringForKey:AROAuthTokenDefault];
-    [manager.keychain removeKeychainStringForKey:ARXAppTokenKeychainKey];
+    [self.keychain removeKeychainStringForKey:AROAuthTokenDefault];
+    [self.keychain removeKeychainStringForKey:ARXAppTokenKeychainKey];
 
-    [manager deleteHTTPCookies];
+    [self deleteHTTPCookies];
     [ARRouter setAuthToken:nil];
-    manager.currentUser = nil;
+    self.currentUser = nil;
 
     if (useStaging != nil) {
-        [[NSUserDefaults standardUserDefaults] setValue:useStaging forKey:ARUseStagingDefault];
-        [[NSUserDefaults standardUserDefaults] synchronize];
+        [self.defaults setValue:useStaging forKey:ARUseStagingDefault];
+        [self.defaults synchronize];
     }
 }
 
@@ -578,7 +579,7 @@ static BOOL ARUserManagerDisableSharedWebCredentials = NO;
 
 - (NSString *)userDataPath
 {
-    NSString *userID = [[NSUserDefaults standardUserDefaults] objectForKey:ARUserIdentifierDefault];
+    NSString *userID = [self.defaults objectForKey:ARUserIdentifierDefault];
     if (!userID) {
         return nil;
     }
@@ -689,6 +690,13 @@ static BOOL ARUserManagerDisableSharedWebCredentials = NO;
             }
         }
     });
+}
+
+# pragma mark DI
+
+- (NSUserDefaults *)defaults
+{
+    return _defaults ?: self.defaults;
 }
 
 @end

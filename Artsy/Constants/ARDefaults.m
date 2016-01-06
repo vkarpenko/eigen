@@ -25,6 +25,11 @@ NSString *const ARShowAuctionResultsButtonDefault = @"auction-results";
 
 + (void)setup
 {
+    [self setup:[NSUserDefaults standardUserDefaults]];
+}
+
++ (void)setup:(NSUserDefaults *)defaults;
+{
     BOOL useStagingDefault;
 #if DEBUG
     useStagingDefault = YES;
@@ -32,7 +37,7 @@ NSString *const ARShowAuctionResultsButtonDefault = @"auction-results";
     useStagingDefault = NO;
 #endif
 
-    [[NSUserDefaults standardUserDefaults] registerDefaults:@{
+    [defaults registerDefaults:@{
         ARUseStagingDefault : @(useStagingDefault),
         AROnboardingPromptThresholdDefault : @(AROnboardingPromptDefault),
         AROnboardingSkipPersonalizeDefault : @(NO),
@@ -44,8 +49,14 @@ NSString *const ARShowAuctionResultsButtonDefault = @"auction-results";
 
 + (void)resetDefaults
 {
-    [[NSUserDefaults standardUserDefaults] removePersistentDomainForName:[[NSBundle mainBundle] bundleIdentifier]];
-    [[NSUserDefaults standardUserDefaults] synchronize];
+    [self resetDefaults:[NSUserDefaults standardUserDefaults]];
 }
+
++ (void)resetDefaults:(NSUserDefaults *)defaults
+{
+    [defaults removePersistentDomainForName:[[NSBundle mainBundle] bundleIdentifier]];
+    [defaults synchronize];
+}
+
 
 @end

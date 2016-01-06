@@ -20,14 +20,6 @@
 
 SpecBegin(ARLoginViewController);
 
-beforeEach(^{
-    [ARUserManager clearUserData];
-});
-
-afterEach(^{
-    [OHHTTPStubs removeAllStubs];
-});
-
 describe(@"login view controller", ^{
     __block ARLoginViewController *controller;
 
