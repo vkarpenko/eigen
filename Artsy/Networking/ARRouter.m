@@ -843,11 +843,9 @@ static NSSet *artsyHosts = nil;
 {
     NSDictionary *params = @{
         @"page" : @(page),
-        @"sort" : @"-date_added"
+        @"gene_id" : gene
     };
-    NSString *url = [NSString stringWithFormat:ARGeneArtworksURLFormat, gene];
-
-    return [self requestWithMethod:@"GET" path:url parameters:params];
+    return [self requestWithMethod:@"GET" path:ARGeneArtworksURL parameters:params];
 }
 
 + (NSURLRequest *)newForgotPasswordRequestWithEmail:(NSString *)email
@@ -869,7 +867,7 @@ static NSSet *artsyHosts = nil;
         @"name" : device,
         @"token" : token,
         @"app_id" : bundleID,
-        @"production": ARAppStatus.isBetaOrDev ? @"false" : @"true"
+        @"production" : ARAppStatus.isBetaOrDev ? @"false" : @"true"
     };
     return [self requestWithMethod:@"POST" path:ARNewDeviceURL parameters:params];
 }
