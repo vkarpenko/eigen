@@ -4,7 +4,7 @@ gem 'cocoapods', "~> 0.39"
 gem 'cocoapods-keys'
 
 # 1.6.7 contains the OS X build fix.
-gem 'nokogiri', '1.6.7.rc4'
+gem 'nokogiri', '1.13.6'
 
 group :development do
   gem 'lowdown'
