@@ -199,7 +199,7 @@ GEM
     memoist (0.14.0)
     method_source (0.8.2)
     mini_magick (4.0.4)
-    mini_portile2 (2.0.0)
+    mini_portile2 (2.8.0)
     minitest (5.8.3)
     molinillo (0.4.1)
     multi_json (1.11.2)
@@ -211,8 +211,9 @@ GEM
       net-ssh (>= 2.6.5)
     net-ssh (3.0.2)
     netrc (0.7.8)
-    nokogiri (1.6.7.rc4)
-      mini_portile2 (~> 2.0.0.rc2)
+    nokogiri (1.13.9)
+      mini_portile2 (~> 2.8.0)
+      racc (~> 1.4)
     octokit (4.2.0)
       sawyer (~> 0.6.0, >= 0.5.3)
     os (0.9.6)
@@ -234,6 +235,7 @@ GEM
       coderay (~> 1.1.0)
       method_source (~> 0.8.1)
       slop (~> 3.4)
+    racc (1.6.0)
     retriable (1.4.1)
     rouge (1.10.1)
     rubyzip (1.1.7)
@@ -315,7 +317,7 @@ DEPENDENCIES
   gym
   lowdown
   match
-  nokogiri (= 1.6.7.rc4)
+  nokogiri (= 1.13.9)
   pilot
   second_curtain
   xcpretty
